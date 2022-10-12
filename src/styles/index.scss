@@ -1,5 +1,3 @@
 @use "./board.scss";
-
-body{
-  background-color: black;
-}
+@use "./layout.scss";
+@use "./controls.scss";

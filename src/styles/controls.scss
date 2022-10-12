@@ -1,0 +1,63 @@
+#controls {
+  color: white;
+  display: grid;
+  grid-template-areas: 
+    "head head"
+    "place random"
+    "goal clear"
+    "bstart bstart"
+    "signature signature"
+  ;
+  gap: 10px;
+}
+
+button {
+  all: initial;
+  font-size: 1.4rem;
+  color: white;
+  font-family: monospace;
+  padding: 5px;
+  border: 2px solid white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#controls > h1 {
+  grid-area: head;
+  font-size: 2.2rem;
+  text-align: center;
+}
+
+#place {
+  grid-area: place;
+}
+
+#random {
+  grid-area: random;
+}
+
+#place-goal {
+  grid-area: goal;
+}
+
+#clear {
+  grid-area: clear;
+}
+
+#start {
+  grid-area: bstart;
+  text-align: center;
+  font-weight: bold;
+}
+
+#signature {
+  grid-area: signature;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#signature > img {
+  width: 50px;
+  height: 50px;
+}

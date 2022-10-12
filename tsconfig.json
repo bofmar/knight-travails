@@ -5,5 +5,9 @@
       "ES2017",
       "DOM"
     ]
-  }
+  },
+  "include": [
+    "src/components",
+    "src/custom.d.ts"
+  ]
 }
