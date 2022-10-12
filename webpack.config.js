@@ -6,10 +6,12 @@ module.exports = {
     filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
-  rules: [
-    {
-      test: /\.scss$/i,
-      use: ['style-loader', 'css-laoder', 'sass-loader'],
-    },
-  ],
+  module: {
+    rules: [
+      {
+        test: /\.scss$/i,
+        use: ['style-loader', 'css-laoder', 'sass-loader'],
+      },
+    ],
+  },
 };
