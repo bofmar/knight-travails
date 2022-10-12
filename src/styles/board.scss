@@ -10,6 +10,15 @@
 
 #board-wrapper > .square{
   border: 1px solid black;
+  aspect-ratio: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.square > img {
+  height: calc(100% / 1.5);
+  width: calc(100% / 1.5);
 }
 
 .placing > .square:hover {
