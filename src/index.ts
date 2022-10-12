@@ -1,6 +1,7 @@
 import drawBoard from "./modules/drawBoard";
 import signature from "./modules/signature";
 import placeKnight from "./modules/placeKnight";
+import placeGoal from "./modules/placeGoal";
 import './styles/index.scss';
 
 const board = document.getElementById('board-wrapper');
@@ -12,6 +13,7 @@ let goalPosition: number;
   drawBoard();
   signature();
   placeKnight();
+  placeGoal();
 
   // get the id of the clicked square and set it as the new position of either the knight or the goal.
   Array.from(board.children).forEach(square => {
