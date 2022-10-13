@@ -8,6 +8,7 @@ import Goal from './assets/goal.svg';
 import './styles/index.scss';
 
 const board = document.getElementById('board-wrapper');
+const randomB = document.getElementById('random');
 
 let knightPosition: number;
 let goalPosition: number;
@@ -39,5 +40,18 @@ let goalPosition: number;
       }
       board.className = '';
     });
+  });
+
+  randomB.addEventListener('click', () => {
+    knightPosition = Math.floor(Math.random() * 64);
+    board.children[knightPosition].appendChild(kimg);
+
+    goalPosition = Math.floor(Math.random() * 64);
+
+    while (goalPosition === knightPosition) {
+      goalPosition = Math.floor(Math.random() * 64);
+    }
+
+    board.children[goalPosition].appendChild(gimg);
   });
 })();
