@@ -2,6 +2,7 @@ import drawBoard from "./modules/drawBoard";
 import signature from "./modules/signature";
 import placeKnight from "./modules/placeKnight";
 import placeGoal from "./modules/placeGoal";
+import AdjecencyList from "./modules/AdjecencyList";
 
 import Knight from './assets/knight.svg';
 import Goal from './assets/goal.svg';
@@ -9,9 +10,17 @@ import './styles/index.scss';
 
 const board = document.getElementById('board-wrapper');
 const randomB = document.getElementById('random');
+const startB = document.getElementById('start');
 
 let knightPosition: number;
 let goalPosition: number;
+const possibleMoves = [
+  [1, 2], [1, -2],
+  [2, 1], [2, -1],
+  [-1, 2], [-1, -2],
+  [-2, 1], [-2, -1]
+];
+const adList = new AdjecencyList(possibleMoves);
 
 (function start() {
   drawBoard();
@@ -54,4 +63,12 @@ let goalPosition: number;
 
     board.children[goalPosition].appendChild(gimg);
   });
+
+  startB.addEventListener('click', () => {
+    console.log(adList.traverse(goalPosition, knightPosition));
+    console.log(goalPosition);
+    //adList.reset();
+    //console.log(adList.list);
+  });
+
 })();
