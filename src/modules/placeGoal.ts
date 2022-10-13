@@ -3,7 +3,6 @@ export default function placeGoal() {
   const b = document.getElementById('place-goal');
 
   b.addEventListener('click', () => {
-    board.classList.add('placing');
-    board.classList.add('placing-goal');
+    board.className = 'placing placing-goal';
   });
 }

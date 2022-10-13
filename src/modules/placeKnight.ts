@@ -3,7 +3,6 @@ export default function placeKnight() {
   const b = document.getElementById('place');
 
   b.addEventListener('click', () => {
-    board.classList.add('placing');
-    board.classList.add('placing-knight');
+    board.className = 'placing placing-knight';
   });
 }
