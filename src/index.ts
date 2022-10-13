@@ -67,7 +67,7 @@ const adList = new AdjecencyList(possibleMoves);
   startB.addEventListener('click', () => {
     console.log(adList.traverse(goalPosition, knightPosition));
     console.log(goalPosition);
-    //adList.reset();
+    adList.reset();
     //console.log(adList.list);
   });
 
