@@ -4,3 +4,14 @@ body{
   gap: 100px;
   align-items: center;
 }
+
+@media screen and (max-width: 1136px) {
+  body {
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  body > div{
+    margin: 5px;
+  }
+}
