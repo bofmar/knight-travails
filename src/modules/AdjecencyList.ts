@@ -38,11 +38,9 @@ export default class AdjecencyList {
   }
 
   traverse(target: number, origin: number) {
-    const visited: Set<number> = new Set();
     const que: number[] = [];
 
     this.list[origin].forEach((move) => {
-      visited.add(move);
       que.push(move);
       this.squares[move].setPredecesor(this.squares[origin]);
     });
@@ -52,7 +50,6 @@ export default class AdjecencyList {
       const possibleMoves = this.list[nextMove];
 
       possibleMoves.forEach((move) => {
-        visited.add(move);
         que.push(move);
         this.squares[move].setPredecesor(this.squares[nextMove]);
       });
