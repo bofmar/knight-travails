@@ -1,6 +1,6 @@
 # Knight Travails
 
-Visualization of pathfinding of a knight chess piece. Made with Typescript, HTML5 and CSS3. See it live [here]().
+Visualization of pathfinding of a knight chess piece. Made with Typescript, HTML5 and CSS3. See it live [here](https://bofmar.github.io/knight-travails/).
 
 ## How to use
 1. Select the starting location for the knight by pressing the `Place knight` button and then a square on the board.
