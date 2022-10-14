@@ -11,6 +11,7 @@ import './styles/index.scss';
 const board = document.getElementById('board-wrapper');
 const randomB = document.getElementById('random');
 const startB = document.getElementById('start');
+const clearB = document.getElementById('clear');
 
 let knightPosition: number;
 let goalPosition: number;
@@ -51,6 +52,7 @@ const adList = new AdjecencyList(possibleMoves);
     });
   });
 
+  // get random co-ordinates for the knight and the goal
   randomB.addEventListener('click', () => {
     knightPosition = Math.floor(Math.random() * 64);
     board.children[knightPosition].appendChild(kimg);
@@ -64,7 +66,30 @@ const adList = new AdjecencyList(possibleMoves);
     board.children[goalPosition].appendChild(gimg);
   });
 
+  function clear(all = false) {
+    Array.from(board.children).forEach(square => {
+      square.textContent = '';
+      if (square.lastChild) {
+        square.removeChild(square.lastChild);
+      }
+    });
+    if (all) {
+      knightPosition = undefined;
+      goalPosition = undefined;
+    }
+  }
+
+  clearB.addEventListener('click', () => {
+    clear(true);
+  });
+
   startB.addEventListener('click', () => {
+    if (knightPosition === undefined || goalPosition === undefined) return;
+    // remove the previews moves from the board
+    clear();
+    board.children[knightPosition].appendChild(kimg);
+    board.children[goalPosition].appendChild(gimg);
+
     const moves = adList.traverse(goalPosition, knightPosition);
     let i = 1;
     moves.forEach((square, index) => {
