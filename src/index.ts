@@ -65,10 +65,25 @@ const adList = new AdjecencyList(possibleMoves);
   });
 
   startB.addEventListener('click', () => {
-    console.log(adList.traverse(goalPosition, knightPosition));
-    console.log(goalPosition);
+    const moves = adList.traverse(goalPosition, knightPosition);
+    let i = 1;
+    moves.forEach((square, index) => {
+      const boardSquare = document.getElementById(square.toString());
+      const nexSquare = (index + 1 < moves.length) ? document.getElementById(moves[index + 1].toString()) : null;
+      if (square !== goalPosition) {
+        setTimeout(() => {
+          boardSquare.innerText = i.toString()
+          i++;
+          if (nexSquare) {
+            if (nexSquare.id === goalPosition.toString()) {
+              nexSquare.removeChild(nexSquare.lastChild);
+            }
+            nexSquare.appendChild(kimg);
+          }
+        }, 500 * (index + 1));
+      }
+    });
     adList.reset();
-    //console.log(adList.list);
   });
 
 })();
